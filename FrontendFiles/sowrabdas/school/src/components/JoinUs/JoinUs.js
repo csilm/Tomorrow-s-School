@@ -76,6 +76,7 @@ const JoinUs = () => {
                             cumque dolor vel, amet excepturi consequatur aperiam labore, ad doloribus? Mollitia minus ab eaque.</p>
                         <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 pr-7 hover:[bg-[#fab811] text-white]">Contact us for more info</button>
 
+                        
                     </div>
                 </div>
                 <div>
