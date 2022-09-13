@@ -1,9 +1,12 @@
 import './App.css';
+import JoinUs from './components/JoinUs/JoinUs';
+import Navigation from './shared/Navigation';
 
 function App() {
   return (
     <div className="App">
-      <h2> Hello Warriors </h2>
+    <Navigation/>
+     <JoinUs/>
     </div>
   );
 }
