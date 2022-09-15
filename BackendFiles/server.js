@@ -1,11 +1,18 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const cors=require("cors")
+const port = 5000
+const app =require("./app")
+const mongoose = require('mongoose');
+
+require('dotenv').config()
 
 
-app.get("/", function (req, res) { 
-    res.send('Hello Warriors');
- });
+mongoose.connect('mongodb://localhost:27017/tommorrow-school').then(()=>{
+  console.log("database connected")
+})
 
-app.listen(3000, function () { 
-    console.log("server started on port 3000");
- });
+
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
