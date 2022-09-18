@@ -1,6 +1,33 @@
+import { useState } from "react"
 import "./donate.css"
-
+import axios from "axios"; 
 const Donate = () => {
+
+const [data,setData]=useState({})
+
+    const handleVal=(e)=>{
+         const field= e.target.name;
+         const value=e.target.value;
+         const loadData={...data};
+         loadData[field]=value;
+       setData(loadData);
+       console.log(data);
+      
+       
+       
+    }
+    const handleSubmit=async(e)=>{
+    e.preventDefault()
+       
+try {
+      await axios.post("http://localhost:5000/donate",data)
+      .then(result=>console.log(result));
+} catch (error) {
+    console.log(error.message);
+}
+    
+    }
+
     return (
         <div>
             <div className="content">
@@ -34,18 +61,18 @@ const Donate = () => {
                             <p className="donP">You can choose any of the online payment options below or wire transfer your donation directly to:</p>
                             <strong style={{ marginBottom: "2%" }}>The Tomorrow School e.V. | IBAN: DE50 8306 5408 0004 1798 46 | BIC: GENO DEF1 SLR</strong>
                             <div className="w-full mt-4">
-                                <form className="bg-white rounded px-8 pt-6 pb-8 mb-4" action="">
+                                <form className="bg-white rounded px-8 pt-6 pb-8 mb-4" >
                                     <label className="block text-gray-700 text-sm font-bold mb-2" for="fullname">Full Name</label>
-                                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="FullName" id="fullname" placeholder="Fullname" />
+                                    <input onChange={handleVal} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="FullName" id="fullname" placeholder="Fullname" />
                                     <label className="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
-                                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="email" name="email" id= "email" placeholder="Email" />
+                                    <input  onChange={handleVal}className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="email" name="email" id= "email" placeholder="Email" />
                                     <label className="block text-gray-700 text-sm font-bold mb-2" for="amount">Donation Amount</label>
-                                    <input className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="number" name="amount" id="amount" placeholder="Put your Donation in $" />  $
+                                    <input  className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="number" name="amount" id="amount" placeholder="Put your Donation in $" />  $
                                     <label className="block text-gray-700 text-sm font-bold mb-2" for="address">Address</label>
                                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="address" id="address" placeholder="Write your full address." />
                                     <label className="block text-gray-700 text-sm font-bold mb-2" for="message">Your message</label>
-                                    <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" name="message" id="message" cols="30" rows="5"></textarea>
-                                    <button className="bg-yellow-500 text-white  hover:bg-white hover:text-yellow-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Donate</button>
+                                    <textarea  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" name="message" id="message" cols="30" rows="5"></textarea>
+                                    <button onClick={handleSubmit} className="bg-yellow-500 text-white  hover:bg-white hover:text-yellow-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Donate</button>
                                 </form>
                             </div>
                         </div>

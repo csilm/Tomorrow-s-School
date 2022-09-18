@@ -62,6 +62,9 @@ app.post("/contact",async(req,res,next)=>{
     }
 })
 
+app.post("/donate",(req,res)=>{
+    console.log(req.body);
+})
 
 
 module.exports=app
