@@ -8,7 +8,7 @@ const Container2 = () => {
   return (
     <div className='flex flex-row flex-wrap h-auto w-full justify-center items-center'>
       <div className='flex flex-row flex-wrap h-auto w-full justify-center items-center'>
-        <div className='flex flex-col md:w-full lg:w-1/2 mt-10 mb-10 items-center'>
+        <div className='flex flex-col md:w-fulls lg:w-1/2 mt-10 mb-10 items-center'>
         <h1 className='text-3xl p-5 font-bold'>THE TOMORROW SCHOOL</h1>
         <h3 className='w-[25rem]'>We want to help improve the education environment for children in Bangladesh. And the story starts with Alemayehu, my father.</h3>
         </div>

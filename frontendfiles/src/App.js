@@ -17,7 +17,6 @@ function App() {
         <Navigation />
         
         <Routes>
-          {/*<Route path="home" element={<A/>}/>*/}
           <Route path="home" element={<Home/>}/>
           <Route path="/" element={<Home/>}/>
           <Route path="joinus" element={<JoinUs/>} />   
