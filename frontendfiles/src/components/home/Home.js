@@ -5,6 +5,7 @@ import MiddlePart from './MiddlePart';
 const Home = () => {
     return (
         <div>
+            
             <Banner />
             <MiddlePart/>
         </div>
