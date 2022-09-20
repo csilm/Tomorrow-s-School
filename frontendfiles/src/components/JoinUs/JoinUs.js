@@ -11,9 +11,12 @@ import doSomethingHoverImg from '../../images/images-18.jpg';
 
 const JoinUs = () => {
     
+   
+
     return (
         <>
-            <div className=' grid grid-cols-2 border-2'>
+            
+            <div className='sm:flex sm:flex-col md:grid md:grid-cols-2'>
                 <div className='group'>
                    
                         <img src={donateImg1} className="group-hover:hidden" alt="" />
@@ -22,8 +25,8 @@ const JoinUs = () => {
                     
 
                 </div>
-                <div className='text-left flex items-center ml-20 mr-10'>
-                    <div>
+                <div className='text-left flex items-center  '>
+                    <div className='sm:ml-8 md:ml-16'>
                         <p class=' text-4xl font-bold'>Donate</p>
                         <p className='mt-8 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis minima obcaecati quam consequuntur, nam iure tenetur vitae totam
                             <span className='font-bold'>velit debitis aut magnam! Quod, labore nobis! Possimus nam velit nobis quae explicabo a illo molestiae ratione officia,</span>
@@ -36,7 +39,7 @@ const JoinUs = () => {
             </div>
 
 
-            <div className=' grid grid-cols-2'>
+            <div className='sm:flex sm:flex-col-reverse md:grid md:grid-cols-2'>
                 <div className=' flex items-center text-left'>
                     <div className='ml-20 mr-10'>
                         <p class=' text-4xl font-bold'>Donate Your Birthday</p>
@@ -51,13 +54,11 @@ const JoinUs = () => {
                    
                    <img src={birthImg} className="group-hover:hidden" alt="" />
                    <img src={birthHoverImg} className="hidden group-hover:block" alt="" />
-             
-
            </div>
             </div>
 
 
-            <div className='grid grid-cols-2'>
+            <div className='sm:flex sm:flex-col md:grid md:grid-cols-2'>
                 <div className='group'>
                 <img src={fundraisingImg} className="group-hover:hidden" alt="" />
                 <img src={fundraisingHoverImg} className="hidden group-hover:block" alt="" />
@@ -79,7 +80,7 @@ const JoinUs = () => {
             </div>
 
 
-            <div className='grid grid-cols-2'>
+            <div className='sm:flex sm:flex-col md:grid md:grid-cols-2'>
                 <div className='text-left flex items-center ml-20 mr-10'>
                     <div>
                         <p class=' text-4xl font-bold'>Sponsar <br /> a project</p>
@@ -97,7 +98,7 @@ const JoinUs = () => {
 
 
 
-            <div className='grid grid-cols-2'>
+            <div className='sm:flex sm:flex-col md:grid md:grid-cols-2'>
                 <div>
                     <img src={donateImg1} alt="" />
                 </div>
