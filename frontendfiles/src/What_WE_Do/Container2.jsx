@@ -22,7 +22,7 @@ const Container2 = () => {
     <img className='absolute left-1/4 ml-0 top-1/3 w-[25rem]' src={Class} alt="" />
     <img className=' absolute left-1/4 top-2/3 w-[30rem]' src={Kitchen} alt="" />
     <img className='absolute left-1/2 top-1/3 mt-16 w-[25rem]' src={WC} alt="" />
-    <img className='absolute right-0 top-0 h-auto  w-[28rem]' src={Tree} alt="" />
+    <img className='absolute right-0 top-3/3 h-auto  w-[28rem]' src={Tree} alt="" />
     </div>
     <div className='w-full h-auto flex flex-col flex-wrap justify-center items-center pt-24'>
       <div className='w-2/3 h-auto flex flex-row justify-around items-center'>

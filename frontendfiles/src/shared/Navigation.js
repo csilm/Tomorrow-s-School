@@ -49,13 +49,13 @@ const Navigation = () => {
                 <div className={navColor==false ? 'text-white flex ml-28 space-x-4' : 'flex ml-28 space-x-4'}>
                   <Link to="/" className='flex'><a href="#" class="px-3 py-2 font-medium" aria-current="page">Home</a></Link>
 
-                 <a href="#" class="px-3 py-2 font-medium">About us</a>
+                 <Link to="/aboutus" className='flex'><a href="#" class="px-3 py-2 font-medium">About us</a></Link>
 
-                  <a href="#" class="px-3 py-2 font-medium">What we do</a>
+                  <Link to="/whatWeDo" className='flex'><a href="#" class="px-3 py-2 font-medium">What we do</a></Link>
 
                  <Link to="/joinus" className='flex'> <a href="#" class="px-3 py-2 font-medium">join Us</a></Link>
 
-                  <a href="#" class="px-3 py-2 font-medium">Contact us</a>
+                  <Link to="/contactus" className='flex'><a href="#" class="px-3 py-2 font-medium">Contact us</a></Link>
                   <a href="#" class="font-medium flex align-center justify-center">
                    <button className='bg-[#fab811] p-2'>Donate</button>
                   </a>
