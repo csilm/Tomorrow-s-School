@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 // import axios from "axios";
 import StripeCheckout from 'react-stripe-checkout'
-
 export const Form = () => {
-    const [data, setData] = useState({
-        name : "School Donation"
-    })
+    const [data, setData] = useState({})
 
     const handleVal = (e) => {
         const field = e.target.name;
@@ -17,6 +14,7 @@ export const Form = () => {
     }
 
     const makePayment = token => {
+
         const body = {
             token,
             data
@@ -30,9 +28,8 @@ export const Form = () => {
             headers,
             body: JSON.stringify(body)
         }).then(response => {
-            console.log("Response", response);
             const { status } = response;
-            console.log("Status", status);
+            console.log( status);
         }).catch(err => console.log(err))
 
     }
