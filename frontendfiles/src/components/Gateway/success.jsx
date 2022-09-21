@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "reactstrap";
 import jsPDF from 'jspdf';
-import Img from '../Donate/static/Final-09-768x89.png'
+import Img from '../Donate/static/Website-design_3-09.png'
 import { useRef } from 'react';
 export const Success = () => {
 
@@ -11,9 +11,7 @@ export const Success = () => {
     const content = pdfRef.current;
 
     const doc = new jsPDF({
-      orientation: 'p',
-      unit: 'in',
-      format: [4, 2]
+      orientation : 'landscape'
     });
     doc.html(content, {
       callback: function (doc) {

@@ -10,7 +10,7 @@ import Food from './Resource/Website-design_3-19.png';
 
 const Container1 = () => {
   return (
-    <div className='pt-10 lg:hidden'>
+    <div className='pt-10 lg:hidden sm:block md:block'>
       <div className='h-auto w-full flex flex-col flex-wrap justify-center items-center'>
       <img className='w-[15rem] h-auto' src={Library} alt="" />
       <div className='h-auto w-full flex flex-row flex-wrap justify-around items-center'>

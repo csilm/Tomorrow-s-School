@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 
 
-mongoose.connect('mongodb://localhost:27017/tommorrow-school').then(()=>{
+mongoose.connect('mongodb://localhost:27017/tommorrow-school',{ useNewURLParser : true }).then(()=>{
   console.log("database connected")
 })
 

@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 // import axios from "axios";
 import StripeCheckout from 'react-stripe-checkout'
+
 export const Form = () => {
+
     const [data, setData] = useState({})
+
+    const navigate = useNavigate()
 
     const handleVal = (e) => {
         const field = e.target.name;
@@ -27,10 +32,13 @@ export const Form = () => {
             method: "POST",
             headers,
             body: JSON.stringify(body)
-        }).then(response => {
-            const { status } = response;
-            console.log( status);
-        }).catch(err => console.log(err))
+        }).then(response => response.json()).then(data=> {
+            console.log(data.message);
+            if (data.message) {
+                navigate('/success')
+            }
+        })
+            .catch(err => console.log(err))
 
     }
 
@@ -47,7 +55,7 @@ export const Form = () => {
 
     return (
         <div className="w-full mt-4">
-            <form className="bg-white rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit} action="/payment" method="POST">
+            <form className="bg-white rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
                 <label className="block text-gray-700 text-sm font-bold mb-2" for="fullname">Full Name</label>
                 <input onChange={handleVal} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="FullName" id="fullname" placeholder="Fullname" required/>
                 <label className="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
@@ -56,8 +64,8 @@ export const Form = () => {
                 <input onChange={handleVal} className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="number" name="amount" id="amount" placeholder="Put your Donation in $" />  $
                 <label className="block text-gray-700 text-sm font-bold mb-2" for="address">Address</label>
                 <input onChange={handleVal} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="address" id="address" placeholder="Write your full address." />
-                <label className="block text-gray-700 text-sm font-bold mb-2" for="message">Your message</label>
-                <textarea onChange={handleVal} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" name="message" id="message" cols="30" rows="5"></textarea>
+                {/* <label className="block text-gray-700 text-sm font-bold mb-2" for="message">Your message</label>
+                <textarea onChange={handleVal} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" name="message" id="message" cols="30" rows="5"></textarea> */}
                 <br />
                 <StripeCheckout
                     stripeKey="pk_test_51LhW00Hw03tBNYv075zXs3qBic2WDb5cr9WIdtj3QLK7Qfl40ZEbmOTnTXgV9QAKPDfeyWVHUBOXcNWfd419RWGf00kpgzWVio"

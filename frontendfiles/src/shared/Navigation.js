@@ -60,11 +60,11 @@ const Navigation = () => {
                    <button className='bg-[#fab811] p-2'>Donate</button>
                   </a></Link>
                   <div class="flex align-center justify-center  font-medium">
-                    <select id="countries" class=" bg-gray-50 border border-yellow-300 text-yellow-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
+                    {/* <select id="countries" class=" bg-gray-50 border border-yellow-300 text-yellow-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
                       <option selected="">Dn</option>
                       <option value="US">En</option>
 
-                    </select>
+                    </select> */}
 
                   </div>
                 </div>
@@ -75,7 +75,7 @@ const Navigation = () => {
         </div>
 
 
-        <div class="sm:hidden" id="mobile-menu">
+        <div class="sm:hidden md:hidden" id="mobile-menu">
           <div class="space-y-1 pt-2 pb-3">
 
             {
@@ -89,11 +89,11 @@ const Navigation = () => {
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Join us</a>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact us</a>
                 <div class="flex align-center justify-center  font-medium">
-                    <select id="countries" class=" bg-gray-50 border border-yellow-300 text-yellow-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
+                    {/* <select id="countries" class=" bg-gray-50 border border-yellow-300 text-yellow-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
                       <option selected="">Dn</option>
                       <option value="US">En</option>
 
-                    </select>
+                    </select> */}
 
                   </div>
               </div>
