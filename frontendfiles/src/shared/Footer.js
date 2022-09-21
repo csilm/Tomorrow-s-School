@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bg from '../images/images-05.jpg';
 import footerImg from '../images/Website-design_3-07.png';
+import axios from "axios";
+
 const Footer = () => {
+    const [data, setData] = useState({})
+
+
+    const handleVal = (e) => {
+      const field = e.target.name;
+      const value = e.target.value;
+      const loadData = { ...data };
+      loadData[field] = value;
+      setData(loadData);
+      console.log(data);
+  }
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+      try {
+          await axios.post("http://localhost:5000/subscribe", data)
+              .then(result => console.log(result));
+      } catch (error) {
+          console.log(error.message);
+      }
+  
+  }
     return (
         <div>
             <footer style={{ backgroundImage: `url(${bg})` }} class="mt-20 text-center lg:text-left text-white">
@@ -15,12 +38,12 @@ const Footer = () => {
                             <p className=''>
 
                                 The Tomorrow School is a registered non-profit organization in Hamburg, Germany.
-                                
-                               <p className='mt-2'> Register number: VR 24153.</p>
+
+                                <p className='mt-2'> Register number: VR 24153.</p>
                                 <p className='mt-2'>Tax Identification No.: 17/440/23048.</p>
-                                
+
                                 <p className='mt-6'>
-                                Copyright © 2019 All Rights Reserved
+                                    Copyright © 2019 All Rights Reserved
                                 </p>
                             </p>
                         </div>
@@ -42,8 +65,8 @@ const Footer = () => {
                             </p>
                         </div>
                         <div class="">
-                        <h6 class="uppercase font-semibold mb-4">
-                               Contact Us
+                            <h6 class="uppercase font-semibold mb-4">
+                                Contact Us
                             </h6>
                             <p class="mb-4">
                                 <a href="#!" class="text-white">+49/162/2589</a>
@@ -97,36 +120,36 @@ const Footer = () => {
                             <h6 class="uppercase font-semibold mb-4 flex  md:justify-start">
                                 Newsletter
                             </h6>
-                            <p class="flex items-center md:justify-start mb-4">
-                                <div>
+                            <form onSubmit={handleSubmit}>
+                                <p class="flex items-center md:justify-start mb-4">
+                                    <div>
+                                        <input onChange={handleVal} type="text" name='first_name' id="first_name" class="ring-2 focus:outline-none ring-gray-500 p-2 text-black " placeholder="first name" required />
+                                    </div>
+                                </p>
+                                <p class="flex items-center md:justify-start mb-4">
+                                    <div>
 
-                                    <input type="text" id="first_name" class="ring-2 focus:outline-none ring-gray-500 p-2 text-black " placeholder="first name" required />
-                                </div>
-                            </p>
-                            <p class="flex items-center md:justify-start mb-4">
-                                <div>
+                                        <input onChange={handleVal} type="text" name='last_name' id="last_name" class="ring-2 focus:outline-none ring-gray-500 p-2 text-black " placeholder="last name" required />
+                                    </div>
+                                </p>
+                                <p class="flex items-center md:justify-start mb-4">
+                                    <div>
 
-                                    <input type="text" id="last_name" class="ring-2 focus:outline-none ring-gray-500 p-2 text-black " placeholder="last name" required />
-                                </div>
-                            </p>
-                            <p class="flex items-center md:justify-start mb-4">
-                                <div>
+                                        <input onChange={handleVal} type="email" id="email" name='email' class="ring-2 focus:outline-none ring-gray-500 p-2 text-black " placeholder="your email address" required />
+                                    </div>
+                                </p>
 
-                                    <input type="email" id="email" class="ring-2 focus:outline-none ring-gray-500 p-2 text-black " placeholder="your email address" required />
-                                </div>
-                            </p>
-
-                            <p>
-                                <button class="rounded-none bg-[#f7b944] p-2">Subscribe</button>
-                            </p>
-                        
+                                <p>
+                                    <button class="rounded-none bg-[#f7b944] p-2" type='submit'>Subscribe</button>
+                                </p>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div className='container mx-auto'>
-                <hr className='pb-4' />
-                <img src={footerImg} alt="" />
-               </div>
+                    <hr className='pb-4' />
+                    <img src={footerImg} alt="" />
+                </div>
             </footer>
 
         </div>

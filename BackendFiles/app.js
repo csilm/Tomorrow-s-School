@@ -18,13 +18,10 @@ app.use(express.json())
 const contactSchema = mongoose.Schema({
     name: {
         type: String,
-        unique: true,
         required: true
-
     },
     email: {
         type: String,
-        unique: true,
         required: true,
     },
     message: {
@@ -46,15 +43,49 @@ app.get("/", (req, res) => {
 
 const Contact = mongoose.model("Contact", contactSchema);
 
-app.post("/contact", async (req, res, next) => {
-
+app.post("/contact", async (req, res) => {
+    console.log(req.body);
     try {
         const contact = new Contact(req.body);
         const result = await contact.save();
         res.status(200).json({
             message: "data added successfully",
             data: result
+        })
 
+    } catch (error) {
+        res.status(400).json({
+            message: "error occured",
+            error: error.message
+        })
+    }
+})
+
+const subscribeSchema = mongoose.Schema({
+    first_name: {
+        type: String,
+    },
+    last_name: {
+        type: String,
+    },
+    email: {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true
+})
+
+const Subscribe = mongoose.model("Subscribe", subscribeSchema);
+
+app.post("/subscribe", async (req, res)=>{
+    console.log(req.body);
+    try {
+        const subscribe = new Subscribe(req.body);
+        const result = await subscribe.save();
+        res.status(200).json({
+            message: "data added successfully",
+            data: result
         })
 
     } catch (error) {

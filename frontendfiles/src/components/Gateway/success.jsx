@@ -11,7 +11,9 @@ export const Success = () => {
     const content = pdfRef.current;
 
     const doc = new jsPDF({
-      orientation : 'landscape'
+      orientation : 'l',
+      unit: 'px',
+      format : [1200, 700]
     });
     doc.html(content, {
       callback: function (doc) {
@@ -22,8 +24,8 @@ export const Success = () => {
 
   return (
     <div>
-      <div ref={pdfRef} className='h-screen w-full flex justify-center items-center'>
-        <div className='h-[35rem] w-[45rem] bg-white flex flex-col flex-wrap justify-center items-center border-4 border-slate-600 '>
+      <div className='h-screen w-full flex justify-center items-center'>
+        <div ref={pdfRef} className='h-[35rem] w-[45rem] bg-white flex flex-col flex-wrap justify-center items-center border-4 border-slate-600 '>
           <div className='h-auto w-3/4 text-3xl font-serif pb-5'>
             CERTIFICATE OF APPRECIATION <br />
             <h1 className='text-2xl'>FOR DONATION</h1>
