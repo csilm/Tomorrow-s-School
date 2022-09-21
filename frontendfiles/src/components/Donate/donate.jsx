@@ -26,7 +26,7 @@ const Donate = () => {
             </div>
             <div className="content">
                 <div className="mx-2">
-                    <div className="grid grid-rows-1 grid-cols-2">
+                    <div className="grid grid-rows-1 lg:grid-cols-2">
                         <div className="img-div">
                             <img src={require('./static/footer-min.jpg')} className="single-img px-4 z-10" alt="" />
                         </div>

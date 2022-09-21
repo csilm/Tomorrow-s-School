@@ -12,16 +12,28 @@
     font-weight: 500;
 
 }
-@media (max-width:600px) {
+@media (max-width:1080px) {
     .longHandImg{
         display: none;
     }
-}
-.img-div{
-    margin-top: -155px !important;
-}
-.donation{
-    text-align: left;
+    .img-div{
+        padding: 3% !important;
+        margin-bottom: 5%;
+    }
+    .text{
+        margin-inline: 2%;
+        margin-top: 5%;
+        margin-bottom: 2%;
+        font-size: 19px;
+        color: rgb(0,0,0);
+        font-family: sans-serif;
+        line-height: 30px;
+        font-weight: 500;
+    
+    }
+    .donation{
+        text-align: left;;
+    }
 }
 .donationHead{
     font-family: Georgia;
@@ -36,4 +48,12 @@
     font-size: 18px;
     margin: 5% 0 5px;
     line-height: 24px;
+}
+@media (min-width:1080px) {
+.img-div{
+    margin-top: -155px !important;
+}
+.donation{
+    text-align: left;
+}
 }
