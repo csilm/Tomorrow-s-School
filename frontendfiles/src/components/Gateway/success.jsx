@@ -25,7 +25,7 @@ useEffect(()=>{
     const doc = new jsPDF({
       orientation : 'l',
       unit: 'px',
-      format : [1200, 700]
+      format : [745, 590]
     });
     doc.html(content, {
       callback: function (doc) {
@@ -37,27 +37,27 @@ useEffect(()=>{
   return (
     <div>
       <div className='h-screen w-full flex justify-center items-center'>
-        <div ref={pdfRef} className='h-[35rem] w-[45rem] bg-white flex flex-col flex-wrap justify-center items-center border-4 border-slate-600 '>
-          <div className='h-auto w-3/4 text-3xl font-serif pb-5'>
+        <div ref={pdfRef} className='h-[35rem] w-[45rem] m-3 bg-white flex flex-col flex-wrap justify-center items-center border-4 border-slate-600 '>
+          <div className='h-auto w-3/4 text-3xl font-serif text-center pb-5'>
             CERTIFICATE OF APPRECIATION <br />
-            <h1 className='text-2xl'>FOR DONATION</h1>
+            <h1 className='text-2xl text-center'>FOR DONATION</h1>
           </div>
-          <div className='h-auto w-2/3 text-lg font-sans'>
+          <div className='h-auto w-2/3 text-lg text-center font-sans'>
             Presented to
           </div>
-          <div className='h-auto w-2/3 text-4xl font-sans p-2 font-bold'>
+          <div className='h-auto w-2/3 text-4xl text-center font-sans p-2 font-bold'>
             {data?.FullName}
           </div>
-          <div className='h-auto w-2/3 text-lg pb-5 '>
+          <div className='h-auto w-2/3 text-center text-lg pb-5 '>
             For your generous donation to the <br />
             Tomorrow School Organization
           </div>
-          <div className='h-auto w-2/3 font-bold'>
+          <div className='h-auto w-2/3 text-center font-bold'>
             Date : {data?.updatedAt.slice(0,10)}
             <br />
             Time : {data?.updatedAt.slice(11,19)}
           </div>
-          <div className='h-auto w-2/3 flex justify-center items-center'>
+          <div className='h-auto w-2/3 flex justify-center text-center items-center'>
             <img className='h-auto w-[11rem] pt-5' src={Img} alt="" />
           </div>
         </div>
