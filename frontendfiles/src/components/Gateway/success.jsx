@@ -3,8 +3,20 @@ import { Button } from "reactstrap";
 import jsPDF from 'jspdf';
 import Img from '../Donate/static/Website-design_3-09.png'
 import { useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 export const Success = () => {
+const params= useLocation();
 
+const [data,setData]=useState();
+useEffect(()=>{
+  const fetch=async()=>{
+  await  axios.get(`http://localhost:5000/donation/${params.state.id}`).then(result=>setData(result.data.data[0]));
+  }
+  fetch();
+},[params.state])
   const pdfRef = useRef(null);
 
   const pdfGenerate = () => {
@@ -33,15 +45,17 @@ export const Success = () => {
           <div className='h-auto w-2/3 text-lg font-sans'>
             Presented to
           </div>
-          <div className='h-auto w-2/3 text-4xl font-mono p-2 font-bold'>
-            MR Ali
+          <div className='h-auto w-2/3 text-4xl font-sans p-2 font-bold'>
+            {data?.FullName}
           </div>
           <div className='h-auto w-2/3 text-lg pb-5 '>
             For your generous donation to the <br />
             Tomorrow School Organization
           </div>
           <div className='h-auto w-2/3 font-bold'>
-            Date
+            Date : {data?.updatedAt.slice(0,10)}
+            <br />
+            Time : {data?.updatedAt.slice(11,19)}
           </div>
           <div className='h-auto w-2/3 flex justify-center items-center'>
             <img className='h-auto w-[11rem] pt-5' src={Img} alt="" />

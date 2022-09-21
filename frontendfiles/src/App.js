@@ -10,10 +10,10 @@ import JoinUs from './components/JoinUs/JoinUs';
 import Footer from './shared/Footer';
 import Navigation from './shared/Navigation';
 import About_Us from './About_Us/All'; 
-import Donate from "./components/Donate/Donate";
 import What_We_Do from "./What_WE_Do/All";
 import Contract_Us from "./Contract_Us/All";
 import Success from "./components/Gateway/success";
+import Donate from "./components/Donate/donate";
 function App() {
   return (
     <div className="App">
@@ -25,7 +25,7 @@ function App() {
           <Route path="/success" element={<Success/>}/>
           <Route path="joinus" element={<JoinUs/>} />   
          <Route path="aboutus" element={<About_Us />} />
-         <Route path="donate" element={<Donate/>} />
+         <Route path="donate" element={<Donate></Donate>} />
          <Route path="whatWeDo" element={<What_We_Do/>} />
          <Route path="contactus" element={<Contract_Us/>} />
         </Routes>
