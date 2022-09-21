@@ -65,26 +65,67 @@ app.post("/contact",async(req,res,next)=>{
     }
 })
 
+// donation schema design 
 
-app.post("/donation", (req, res)=>{
-    const {data, token}=req.body;
-    console.log("data: ", data);
-    console.log("token email: ", token.email);
-    console.log("token id: ", token.id);
+const donationSchema= mongoose.Schema({
+  
+    FullName:{
+        type:String,
+       
 
-    return stripe.customers.create({
-        email: token.email,
-        source : token.id
-    }).then(customer =>{
-        stripe.charges.create({
-            amount: data.amount * 100,
-            currency : 'usd',
-            customer : customer.id,
-            receipt_email : data.email,
-            description: `Donated amount is ${data.amount} $`,
-        })
-    }).then(result => res.status(200).json(result))
-    .catch(err=> console.log(err))
+    },
+    email:{
+        type:String,
+      
+    },
+    amount:{
+        type:String,
+        
+    },
+    address:{
+        type:String,
+       
+    }
+    
+},{
+    timestamps:true
+})
+
+const Donate= mongoose.model("Donate",donationSchema);
+
+ const reactStripe=(fullData)=>{
+    const {data, token}=fullData;
+
+  return stripe.customers.create({
+         email: token.email,
+         source : token.id
+     }).then(customer =>{
+         stripe.charges.create({
+             amount: data.amount * 100,
+             currency : 'usd',
+             customer : customer.id,
+             receipt_email : data.email,
+             description: `Donated amount is ${data.amount} $`,
+         })
+         
+      
+         
+     })
+ }
+
+app.post("/donation", async(req, res)=>{
+  
+    
+    try {
+      reactStripe(req.body)
+     const donate= new Donate(req.body.data);
+     const result= await donate.save();
+         res.status(200).json({message:"donation successful",data:result})
+    } catch (error) {
+           res.status(400).json({
+            message:error.message
+           })
+    }
 
 })
 

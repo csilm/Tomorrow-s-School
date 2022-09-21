@@ -17,7 +17,7 @@ import Donate from "./components/Donate/Donate";
 function App() {
   return (
     <div className="App">
-      <Donate />
+      <Success />
       {/* <BrowserRouter>
         <Navigation />
         <Routes>
