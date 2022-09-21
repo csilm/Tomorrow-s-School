@@ -56,9 +56,9 @@ const Navigation = () => {
                  <Link to="/joinus" className='flex'> <a href="#" class="px-3 py-2 font-medium">join Us</a></Link>
 
                   <Link to="/contactus" className='flex'><a href="#" class="px-3 py-2 font-medium">Contact us</a></Link>
-                  <a href="#" class="font-medium flex align-center justify-center">
+                  <Link to="/donate"><a href="#" class="font-medium flex align-center justify-center">
                    <button className='bg-[#fab811] p-2'>Donate</button>
-                  </a>
+                  </a></Link>
                   <div class="flex align-center justify-center  font-medium">
                     <select id="countries" class=" bg-gray-50 border border-yellow-300 text-yellow-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
                       <option selected="">Dn</option>
