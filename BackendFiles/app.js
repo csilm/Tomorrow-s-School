@@ -4,7 +4,8 @@ const app = express()
 const cors = require("cors")
 const keys = require('../config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { ObjectID, ObjectId } = require("mongodb");
 const port = 5000
 const dotenv = require('dotenv').config()
 
@@ -93,23 +94,6 @@ const donationSchema = mongoose.Schema({
 
 const Donate = mongoose.model("Donate", donationSchema);
 
-const reactStripe = (fullData) => {
-    const { data, token } = fullData;
-
-    return stripe.customers.create({
-        email: token.email,
-        source: token.id
-    }).then(customer => {
-        stripe.charges.create({
-            amount: data.amount * 100,
-            currency: 'usd',
-            customer: customer.id,
-            receipt_email: data.email,
-            description: `Donated amount is ${data.amount} $`,
-        })
-    })
-}
-
 app.post("/donation", async (req, res) => {
     const { data, token } = req.body;
     try{
@@ -138,6 +122,21 @@ app.post("/donation", async (req, res) => {
         })
     }
 
+})
+
+app.get("/donation/:id",async(req,res)=>{
+    const id=req.params.id;
+  try {
+    const success= await Donate.find({_id:id});
+    console.log(success);
+    res.status(200).json({
+        message:"successful",
+        data:success
+    })
+  } 
+  catch (error) {
+    
+  }
 })
 
 
