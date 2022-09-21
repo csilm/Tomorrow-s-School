@@ -15,7 +15,6 @@ export const Form = () => {
         const loadData = { ...data };
         loadData[field] = value;
         setData(loadData);
-        console.log(data);
     }
 
     const makePayment = token => {
@@ -32,10 +31,14 @@ export const Form = () => {
             method: "POST",
             headers,
             body: JSON.stringify(body)
-        }).then(response => response.json()).then(data=> {
-            console.log(data.message);
-            if (data.message) {
-                navigate('/success')
+        }).then(response => response.json()).then(dt=> {
+            const id=dt.data._id;
+            if (dt.message) {
+                navigate("/success",{
+                    state:{
+                        id
+                    }
+                })
             }
         })
             .catch(err => console.log(err))
@@ -70,7 +73,6 @@ export const Form = () => {
                 <StripeCheckout
                     stripeKey="pk_test_51LhW00Hw03tBNYv075zXs3qBic2WDb5cr9WIdtj3QLK7Qfl40ZEbmOTnTXgV9QAKPDfeyWVHUBOXcNWfd419RWGf00kpgzWVio"
                     token={makePayment}
-                    name={data.name}
                     amount={data.amount * 100}>
                     <button className="bg-yellow-500 text-white  hover:bg-white hover:text-yellow-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type='submit'>Donate</button>
                 </StripeCheckout>
