@@ -19,7 +19,7 @@ const MiddlePart = () => {
                         Read more about each of our programs.</p>
                 </div>
             </div>
-            <div className='bg-[#fab811] text-left p-10 mt-4 w-4/5'>
+            <div className='bg-[#fab811] text-left p-10 mt-4 w-full lg:w-4/5'>
                 <div className='flex justify-around items-center'>
                     <p className='text-4xl text-[#2e353e] font-bold'>How can <br /> you help?</p>
                     <p className='text-3xl border-l-8 border-white-500 p-2'>Make <br />a donation </p>
