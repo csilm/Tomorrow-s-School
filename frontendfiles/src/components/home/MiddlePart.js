@@ -5,12 +5,12 @@ import img from '../../images/images-03.jpg';
 const MiddlePart = () => {
     return (
         <>
-            <div className='mt-10 flex gap-10 text-left container mx-auto'>
+            <div className='mt-10 flex gap-10 flex-wrap flex-row items-center text-left container mx-auto'>
                 <div>
                     <iframe width="550" height="350" src="https://www.youtube.com/embed/_Id9yqJUNNw" title="The Tomorrow School - Our Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <div>
+                <div className='lg:w-1/2 w-full'>
                     <p className='text-5xl font-bold mb-4'>The Tomorrow School e.V.
                         What we do</p>
                     <p>is a German non-profit organization with the purpose of improving the education environment of children in Ethiopia.

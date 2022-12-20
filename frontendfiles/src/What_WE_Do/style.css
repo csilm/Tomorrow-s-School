@@ -1,0 +1,22 @@
+
+.child
+{
+  margin-left: -300px;
+  transition-duration: 1s;
+ 
+}
+.parent:hover .child
+{
+    margin-left: 0px;
+}
+
+.child2
+{
+  margin-right: -300px;
+  transition-duration: 1s;
+ 
+}
+.parent2:hover .child2
+{
+    margin-right: 0px;
+}

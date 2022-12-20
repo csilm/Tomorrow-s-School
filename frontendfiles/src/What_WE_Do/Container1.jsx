@@ -7,17 +7,18 @@ import Wave from './Resource/Website-design_3-07.png';
 import Book from './Resource/Website-design_3-20-e1572723934242.png'
 import Water from './Resource/Website-design_3-22.png';
 import Food from './Resource/Website-design_3-19.png';
+import "./style.css"
 
 const Container1 = () => {
   return (
-    <div className='pt-10 lg:hidden sm:block md:block'>
-      <div className='h-auto w-full flex flex-col flex-wrap justify-center items-center'>
-      <img className='w-[15rem] h-auto' src={Library} alt="" />
+    <div className=' pt-10 lg:hidden sm:block md:block '>
+      <div className=' h-auto w-full flex flex-col flex-wrap justify-center items-center'>
+       <div className=''><img className=' w-[15rem] h-auto' src={Library} alt="" /></div> 
       <div className='h-auto w-full flex flex-row flex-wrap justify-around items-center'>
         <div className='bg-yellow-500 w-1/3 m-5 p-4 text-xl font-bold'>Water</div>
         <div className='w-1/2 pt-5'>
-        <img src={Wave} className='w-full pr-10' alt="" />
-        <img src={Wave} className='w-full pl-10' alt="" />
+        <img src={Wave} className='w-[10rem] pr-10' alt="" />
+        <img src={Wave} className='w-[10rem] pl-10' alt="" />
         </div>
       </div>
       <div className='text-md font-san text-left p-10'>
@@ -38,8 +39,8 @@ const Container1 = () => {
       <div className='h-auto w-full flex flex-col flex-wrap justify-center items-center'>
       <img className='w-[25rem] pt-16 h-auto' src={WC} alt="" />
       <div className='h-auto w-full flex flex-row flex-wrap justify-around items-center'>
-        <img src={Water} className='w-1/4 mt-10' alt="" />
-        <div className='w-1/2 flex flex-col flex-wrap '>
+        <img src={Water} className='w-[20rem] mt-10 ml-20 ' alt="" />
+        <div className='w-[20rem] flex flex-col flex-wrap '>
           <h1 className='w-1/2 bg-yellow-500 pl-7 pr-7 p-3 font-sans font-bold text-lg'>Sanitary</h1>
           <h1 className='w-full bg-yellow-500 pl-7 pr-7 p-3 font-sans font-bold text-lg mt-3 ml-5'>and Hygiene</h1>
         </div>

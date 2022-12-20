@@ -37,12 +37,12 @@ const All = () => {
         <div className=' lg:w-1/2 md:w-full sm:w-full flex flex-col justify-end flex-wrap items-end' >
           <img src={Img} className='h-full lg:w-2/3 sm:w-full md:w-full p-5' alt="" srcset="" />
         </div>
-        <div className=' lg:w-1/2 p-10 md:w-full sm:w-full flex flex-col justify-start flex-wrap items-start' >
+        <div className=' lg:w-1/2   md:w-full sm:w-full flex flex-col justify-start flex-wrap items-end' >
           <form style={{textAlign: 'left'}} onSubmit={handleSubmit}>
             <input onChange={handleVal} className='rounded-md w-full border-2 border-gray-500 lg:w-3/4 p-5 h-14 m-2 ' type="text" name="name" id="name" placeholder='Enter name' />
             <input onChange={handleVal} className='rounded-md w-full border-2 border-gray-500 lg:w-3/4 p-5 h-14 m-2 ' type="email" name="email" id="email" placeholder='Enter Email' />
-            <textarea onChange={handleVal} className="rounded-md w-full border-2 border-gray-500 lg:w-3/4 p-5 m-2 " name="message" id="message" cols="30" rows="5"></textarea>
-            <input className='rounded-md w-[7rem] h-[2.5rem] hover:bg-yellow-500 hover:text-white border-2 border-yellow-500 m-2 ' type="submit" value="submit" />
+            <textarea onChange={handleVal} className="rounded-md w-full border-2 border-gray-500 lg:w-3/4 p-5 m-2 " name="message" id="message" cols="30" rows="5" placeholder='Type here'></textarea>
+             <div>  <input className='rounded-md w-[7rem] h-[2.5rem] hover:bg-yellow-500 duration-500 hover:text-white border-2 border-yellow-500 m-2 mt-2' type="submit" value="submit" /></div>
           </form>
         </div>
       </div>

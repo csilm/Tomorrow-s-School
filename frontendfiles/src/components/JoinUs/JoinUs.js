@@ -11,16 +11,14 @@ import doSomethingHoverImg from '../../images/images-18.jpg';
 
 const JoinUs = () => {
     
-   
-
     return (
         <>
             
             <div className='sm:flex sm:flex-col md:grid md:grid-cols-2'>
-                <div className='group'>
+                <div className='group duration-300'>
                    
-                        <img src={donateImg1} className="group-hover:hidden" alt="" />
-                        <img src={donateHoverImg} className="hidden group-hover:block" alt="" />
+                        <img src={donateImg1} className="group-hover:hidden w-full duration-500" alt="" />
+                        <img src={donateHoverImg} className="hidden group-hover:block w-full duration-500" alt="" />
                  
                     
 
@@ -31,7 +29,7 @@ const JoinUs = () => {
                         <p className='mt-8 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis minima obcaecati quam consequuntur, nam iure tenetur vitae totam
                             <span className='font-bold'>velit debitis aut magnam! Quod, labore nobis! Possimus nam velit nobis quae explicabo a illo molestiae ratione officia,</span>
                             cumque dolor vel, amet excepturi consequatur aperiam labore, ad doloribus? Mollitia minus ab eaque.</p>
-                        <button className="rounded-lg mt-10 p-4 hover:text-white font-bold bg-[#fab811]">Donate Now</button>
+                        <button className="rounded-lg mt-10 p-4 hover:text-white font-bold bg-[#fab811] duration-500">Donate Now</button>
 
                     </div>
 
@@ -46,14 +44,14 @@ const JoinUs = () => {
                         <p className='mt-8 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis minima obcaecati quam consequuntur, nam iure tenetur vitae totam
                             <span className='font-bold'>velit debitis aut magnam! Quod, labore nobis! Possimus nam velit nobis quae explicabo a illo molestiae ratione officia,</span>
                             cumque dolor vel, amet excepturi consequatur aperiam labore, ad doloribus? Mollitia minus ab eaque.</p>
-                        <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 pr-7">Pledge your birthday</button>
+                        <button className="border-2 rounded-md hover:bg-yellow-400 duration-500 font-bold mt-8 border-black p-4 pl-7 pr-7 hover:text-white">Pledge your birthday</button>
 
                     </div>
                 </div>
                 <div className='group'>
                    
-                   <img src={birthImg} className="group-hover:hidden" alt="" />
-                   <img src={birthHoverImg} className="hidden group-hover:block" alt="" />
+                   <img src={birthImg} className="group-hover:hidden w-full" alt="" />
+                   <img src={birthHoverImg} className="hidden group-hover:block w-full" alt="" />
            </div>
             </div>
 
@@ -71,7 +69,7 @@ const JoinUs = () => {
                         <p className='mt-8 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis minima obcaecati quam consequuntur, nam iure tenetur vitae totam
                             <span className='font-bold'>velit debitis aut magnam! Quod, labore nobis! Possimus nam velit nobis quae explicabo a illo molestiae ratione officia,</span>
                             cumque dolor vel, amet excepturi consequatur aperiam labore, ad doloribus? Mollitia minus ab eaque.</p>
-                        <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 pr-7">Start Campaign</button>
+                        <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 hover:bg-yellow-400 duration-500 pr-7 hover:text-white">Start Campaign</button>
 
                     </div>
 
@@ -85,13 +83,13 @@ const JoinUs = () => {
                     <div>
                         <p class=' text-4xl font-bold'>Sponsar <br /> a project</p>
                         <p className='mt-8 text-xl'>You can choose to sponsor a whole project or parts of a bigger initiative like the build of a new and improved water resource or the construction of the school sanitary facilities. The costs vary depending on the project and start from 5,000 €. Once you've made your gift, we'll pair it with an appropriate project (or projects).</p>
-                        <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 pr-7 hover:bg-[#fab811] hover:text-white hover:border-0">Contact us for more info</button>
+                        <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 pr-7 hover:text-white hover:bg-yellow-400 duration-500">Contact us for more info</button>
 
                     </div>
                 </div>
                 <div>
                 <img src={doSomethingImg} className="group-hover:hidden" alt="" />
-                   <img src={doSomethingHoverImg} className="hidden group-hover:block" alt="" />
+                <img src={doSomethingHoverImg} className="hidden group-hover:block" alt="" />
 
                 </div>
             </div>
@@ -108,7 +106,7 @@ const JoinUs = () => {
                         <p className='mt-8 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis minima obcaecati quam consequuntur, nam iure tenetur vitae totam
                             <span className='font-bold'>velit debitis aut magnam! Quod, labore nobis! Possimus nam velit nobis quae explicabo a illo molestiae ratione officia,</span>
                             cumque dolor vel, amet excepturi consequatur aperiam labore, ad doloribus? Mollitia minus ab eaque.</p>
-                        <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 pr-7">Start Campaign</button>
+                        <button className="border-2 rounded-md font-bold mt-8 border-black p-4 pl-7 pr-7 hover:text-white hover:bg-yellow-400 duration-500">Start Campaign</button>
                     </div>
                 </div>
             </div>

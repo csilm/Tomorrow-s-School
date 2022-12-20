@@ -11,18 +11,18 @@ const Navigation = () => {
   }
  
   useEffect(() => {
-    if (window.location.pathname == "/" || window.location.pathname=="/home") {
+    if (window.location.pathname === "/" || window.location.pathname==="/home") {
       setNavColor(true);
   }
  },[navColor])
   return (
-    <div>
+    <div className='flex flex-col justify-around overflow-hidden flex-wrap'>
 
       <nav class={navColor===true ? 'bg-white' : 'bg-[#18181b]'}>
 
-        <div class="ml-auto container">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+        <div class="ml-auto container flex flex-col justify-between">
+          <div class="relative flex h-16 items-center justify-between left-0 lg:left-14 ">
+            <div class="absolute inset-y-0 right-0 flex justify-around items-center sm:hidden">
 
               <button onClick={handleNavbar} type="button" class="rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
@@ -36,15 +36,15 @@ const Navigation = () => {
                 </svg>
               </button>
             </div>
-            <div class="flex sm:items-stretch sm:justify-start">
+            <div class="flex sm:items-stretch justify-end items-center sm:justify-start">
               <div class="flex flex-shrink-0 md:w-48 sm:w-16 items-center">
                 {
-                  navColor==true ?   <img src={logo} className="w-48 " alt="" /> : <img src={logo1} className="w-48" alt="" />
+                  navColor===true ?   <img src={logo} className="w-48 " alt="" /> : <img src={logo1} className="w-48" alt="" />
                 }
               
                 
               </div>
-              <div class="hidden sm:ml-6 sm:block">
+              <div class="hidden sm:ml-6 sm:block absolute right-20">
                 {/*<p className={navColor==false ? 'flex ml-28 space-x-4': 'text-white flex ml-28 space-x-4' } ></p>*/}
                 <div className={navColor==false ? 'text-white flex ml-28 space-x-4' : 'flex ml-28 space-x-4'}>
                   <Link to="/" className='flex'><a href="#" class="px-3 py-2 font-medium" aria-current="page">Home</a></Link>
@@ -75,7 +75,7 @@ const Navigation = () => {
         </div>
 
 
-        <div class="sm:hidden md:hidden" id="mobile-menu">
+        <div class="sm:hidden md:hidden " id="mobile-menu">
           <div class="space-y-1 pt-2 pb-3">
 
             {

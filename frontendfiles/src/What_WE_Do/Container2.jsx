@@ -12,24 +12,32 @@ import Img2 from './Resource/Round-4-36-min.jpg';
 import Img3 from './Resource/Round-4-37-min.jpg';
 import Img4 from './Resource/Round-4-34-min.jpg';
 import Dwave from './Resource/Round-4-31.png';
+import './style.css'
+import  { useState} from 'react'
 
 
 const Container2 = () => {
+  const [over ,setover] =useState('');
   return (
     <div className='h-auto w-full flex flex-col flex-wrap hidden lg:block'>
-      <div className='h-[45rem] w-full bg-red-200 '>
-        <img className='absolute left-2 top-1/5 mt-14 w-[25rem]' src={Library} alt="" />
-        <img className='absolute left-1/4 ml-0 top-1/3 w-[25rem]' src={Class} alt="" />
-        <img className=' absolute left-1/4 top-2/3 w-[30rem]' src={Kitchen} alt="" />
-        <img className='absolute left-1/2 top-1/3 mt-16 w-[25rem]' src={WC} alt="" />
-        <img className='absolute right-0 top-3/3 h-auto  w-[28rem]' src={Tree} alt="" />
+      <div className='h-[45rem] w-full bg-lime-200 '>
+        <img onMouseOver={()=>{setover('lib')}} className='absolute left-2 top-1/5 mt-14 w-[25rem]' src={Library} alt="" />
+        <img onMouseOver={()=>{setover('class')}} className='absolute left-1/4 ml-0 top-1/3 w-[25rem]' src={Class} alt="" />
+        <img onMouseOver={()=>{setover('kit')}} className=' absolute left-1/4 top-2/3 w-[30rem]' src={Kitchen} alt="" />
+        <img onMouseOver={()=>{setover('wc')}} className='absolute left-1/2 top-1/3 mt-16 w-[25rem]' src={WC} alt="" />
+        <img onMouseOver={()=>{setover('Tree')}} className='absolute right-0 top-3/3 h-auto  w-[28rem]' src={Tree} alt="" />
+        <div  className={over === "lib"? 'absolute left-2 top-1/5  mt-[25rem] ml-20 bg-slate-600 h-auto px-4 py-5 text-white border-2 border-yellow-400 rounded-md font-semibold  w-[15rem]':'hidden'}>Water Safe and clean drinking water.  <span className="text-yellow-300"><br /> Deep-dive.</span>.</div>
+        <div  className={over === "class"? 'absolute left-1/4 top-1/3 -mt-[5rem] ml-20 bg-slate-600 h-auto px-4 py-5 text-white border-2 border-yellow-400 rounded-md font-semibold  w-[15rem]':'hidden'}>Study material and books and study material accessible for every student. <span className="text-yellow-300"><br />Read on</span>.</div>
+        <div  className={over === "wc"? 'absolute left-2/3 top-1/3 mt-[10rem] ml-20 bg-slate-600 h-auto px-4 py-5 text-white border-2 border-yellow-400 rounded-md font-semibold  w-[15rem]':'hidden'}>Sanitary and hygiene Basic toilets and washing hands. <span className="text-yellow-300">Why it’s important</span>.</div>
+        <div  className={over === "kit"? 'absolute left-1/4 top-2/3 mt-[8rem] ml-[25rem] bg-slate-600 h-auto px-4 py-5 text-white border-2 border-yellow-400 rounded-md font-semibold  w-[15rem]':'hidden'}>Food A school food program for students.<span className="text-yellow-300"><br /> Learn more.</span>.</div>
+        
       </div>
-      <div className='w-full h-auto flex flex-col flex-wrap justify-center items-center pt-24'>
-        <div className='w-2/3 h-auto flex flex-row justify-around items-center'>
-          <img className='w-1/2' src={Img1} alt="" />
+      <div className='parent w-full h-auto flex flex-col flex-wrap justify-center items-center pt-24'>
+        <div className=' w-2/3 h-auto flex flex-row justify-around items-center'>
+          <img className='child w-1/2 ' src={Img1} alt="" />
           <div className='flex justify-start flex-col items-start'>
             <h1 className='bg-yellow-500 p-3 pl-7 pr-7 text-lg font-bold m-5 ml-0'>Water</h1>
-            <img src={Dwave} className='mr-24 w-2/3 h-1/3' alt="" />
+            <img src={Dwave} className='mr-24 w-[22rem] h-1/3' alt="" />
           </div>
 
         </div>
@@ -48,15 +56,15 @@ const Container2 = () => {
           ensure a higher hygiene practice and support the school food program.
         </div>
       </div>
-      <div className='w-full h-auto flex flex-col flex-wrap justify-center items-center'>
+      <div className='parent2 w-full h-auto flex flex-col flex-wrap justify-center items-center'>
         <div className='w-2/3 h-auto flex justify-around items-center'>
           <div className='flex justify-start flex-col items-start w-full'>
             <h1 className='bg-yellow-500 p-3 pl-7 pr-7 text-lg font-bold m-5 mr-4'>Sanittary</h1>
             <h1 className='bg-yellow-500 p-3 pl-7 pr-7 text-lg font-bold ml-20'>and hygiene</h1>
-            <img src={Water} className='mr-24 w-2/3 h-1/3' alt="" />
+            <img src={Water} className='mr-24 w-[22rem] h-1/3' alt="" />
 
           </div>
-          <img src={Img2} className='w-3/5' alt="" />
+          <img src={Img2} className='child2 w-3/5' alt="" />
         </div>
         <div className='w-2/3 m-10 p-10 text-justify'>
           For most of us, going to the bathroom is the most natural thing to do. We don’t think twice about it – we use the toilet, wash our hands, and that’s that. For children in developing countries, however, this routine is a whole different story: 39% of Primary Schools in Ethiopia only have limited sanitary services, 61% have none! And only 5% of these schools are able to provide hygiene facilities including water and soap. In numbers this means that 25 million children are exposed to health-endangering bacteria and germs everyday. These circumstances lead to infections, illness and ultimately to absence and drop-outs of school or worse. Girls are particularly affected once a month.
@@ -64,13 +72,13 @@ const Container2 = () => {
           Building well-functioning sanitary facilities, install a sustainable waste management system and providing hygiene education to teachers and students are one of our top priorities to keep everyone fit for school.
         </div>
       </div>
-      <div className='w-full h-auto flex flex-col flex-wrap justify-center items-center pt-24'>
+      <div className='parent w-full h-auto flex flex-col flex-wrap justify-center items-center pt-24'>
         <div className='w-2/3 h-auto flex flex-row justify-around items-center'>
-          <img className='w-1/2' src={Img4} alt="" />
+          <img className='child w-1/2' src={Img4} alt="" />
           <div className='flex justify-start flex-col items-start'>
             <h1 className='bg-yellow-500 p-3 pl-7 pr-7 text-lg font-bold mt-10 m-3 ml-0'>Study</h1>
             <h1 className='bg-yellow-500 p-3 pl-7 pr-7 text-lg font-bold  ml-5 w-1/2'>material</h1>
-            <img src={Book} className='mr-24 w-2/3 ' alt="" />
+            <img src={Book} className='mr-24 w-[22rem]  ' alt="" />
           </div>
 
         </div>
@@ -89,14 +97,14 @@ const Container2 = () => {
           ensure a higher hygiene practice and support the school food program.
         </div>
       </div>
-      <div className='w-full h-auto flex flex-col flex-wrap justify-center items-center'>
+      <div className='parent2 w-full h-auto flex flex-col flex-wrap justify-center items-center'>
         <div className='w-2/3 h-auto flex justify-around items-center'>
           <div className='flex justify-start flex-col items-start w-full'>
             <h1 className='bg-yellow-500 p-3 pl-7 pr-7 text-lg font-bold ml-20'>FOOD</h1>
-            <img src={Food} className='mr-24 w-Full h-1/3' alt="" />
+            <img src={Food} className='mr-24 w-[22rem]  h-1/3' alt="" />
 
           </div>
-          <img src={Img3} className='w-3/5' alt="" />
+          <img src={Img3} className='child2 w-3/5' alt="" />
         </div>
         <div className='w-2/3 m-10 p-10 text-justify'>
           For most of us, going to the bathroom is the most natural thing to do. We don’t think twice about it – we use the toilet, wash our hands, and that’s that. For children in developing countries, however, this routine is a whole different story: 39% of Primary Schools in Ethiopia only have limited sanitary services, 61% have none! And only 5% of these schools are able to provide hygiene facilities including water and soap. In numbers this means that 25 million children are exposed to health-endangering bacteria and germs everyday. These circumstances lead to infections, illness and ultimately to absence and drop-outs of school or worse. Girls are particularly affected once a month.

@@ -27,7 +27,7 @@ const Footer = () => {
   }
     return (
         <div>
-            <footer style={{ backgroundImage: `url(${bg})` }} class="mt-20 text-center lg:text-left text-white">
+            <footer style={{ backgroundImage: `url(${bg})` }} class="mt-20 text-center lg:text-left lg:px-10 text-white">
 
                 <div class=" py-10 text-left ">
                     <div class="mx-auto container grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
