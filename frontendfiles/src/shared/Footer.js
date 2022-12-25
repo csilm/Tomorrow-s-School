@@ -18,7 +18,7 @@ const Footer = () => {
     const handleSubmit = async (e) => {
       e.preventDefault()
       try {
-          await axios.post("http://localhost:5000/subscribe", data)
+          await axios.post("https://tomorrows-school-clone.onrender.com/subscribe", data)
               .then(result => console.log(result));
       } catch (error) {
           console.log(error.message);

@@ -13,7 +13,7 @@ const params= useLocation();
 const [data,setData]=useState();
 useEffect(()=>{
   const fetch=async()=>{
-  await  axios.get(`http://localhost:5000/donation/${params.state.id}`).then(result=>setData(result.data.data[0]));
+  await  axios.get(`https://tomorrows-school-clone.onrender.com/donation/${params.state.id}`).then(result=>setData(result.data.data[0]));
   }
   fetch();
 },[params.state])

@@ -19,7 +19,7 @@ const All = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-        await axios.post("http://localhost:5000/contact", data)
+        await axios.post("https://tomorrows-school-clone.onrender.com/contact", data)
             .then(result => console.log(result));
     } catch (error) {
         console.log(error.message);

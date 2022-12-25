@@ -27,7 +27,7 @@ export const Form = () => {
             "Content-Type": "application/json"
         }
 
-        return fetch(`http://localhost:5000/donation`, {
+        return fetch(`https://tomorrows-school-clone.onrender.com/donation`, {
             method: "POST",
             headers,
             body: JSON.stringify(body)
