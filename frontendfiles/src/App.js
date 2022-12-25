@@ -13,7 +13,7 @@ import About_Us from './About_Us/All';
 import What_We_Do from "./What_WE_Do/All";
 import Contract_Us from "./Contract_Us/All";
 import Success from "./components/Gateway/success";
-import Donate from "./components/Donate/Donate";
+import Donate from "./components/Donate/donate";
 function App() {
   return (
     <div className="App">
