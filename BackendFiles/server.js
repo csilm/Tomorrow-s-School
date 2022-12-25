@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 
-mongoose.connect('mongodb://localhost:27017/tommorrow-school',{ useNewURLParser : true }).then(()=>{
+mongoose.connect('mongodb+srv://admin-isfak:<password>@cluster0.foygf8d.mongodb.net/?retryWrites=true&w=majority/tommorrow-school',{ useNewURLParser : true }).then(()=>{
   console.log("database connected")
 })
 
