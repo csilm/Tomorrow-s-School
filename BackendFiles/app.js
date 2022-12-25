@@ -36,7 +36,11 @@ const contactSchema = mongoose.Schema({
 
 
 app.get("/", (req, res) => {
-    res.send("contact page")
+    try {
+        res.send("contact page")
+    } catch (error) {
+        console.log(err);
+    }
 })
 
 
