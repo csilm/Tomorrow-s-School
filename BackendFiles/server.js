@@ -6,11 +6,20 @@ const mongoose = require('mongoose')
 const mongodburl = "mongodb+srv://admin-isfak:<Test123>@cluster0.foygf8d.mongodb.net/?retryWrites=true&w=majority"
 require('dotenv').config()
 
-mongoose.set('strictQuery', true);
+try {
+  mongoose.set('strictQuery', true);
+} catch (error) {
+  console.log(error);
+}
 
-mongoose.connect(mongodburl,{ useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
-  console.log("database connected")
-})
+try {
+  mongoose.connect(mongodburl,{ useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
+    console.log("database connected")
+  })
+} catch (error) {
+  console.log(error);
+}
+
 
 
 
