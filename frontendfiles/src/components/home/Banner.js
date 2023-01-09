@@ -54,7 +54,7 @@ const Banner = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, id omnis iusto,
               </h2>
               <p className='text-white'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores repudiandae,</p>
-              <button className="rounded-lg mt-10 p-4 hover:text-white font-bold bg-[#fab811]">Doante</button>
+              <Link to="/donate"><button className="rounded-lg mt-10 p-4 hover:text-white font-bold bg-[#fab811]">Donate</button></Link>
             </div>
             <img src={img2} />
 
